@@ -338,8 +338,7 @@ class UserProfileAdmin(ImportExportMixin, RelatedFieldAdmin, AdminAdvancedFilter
     profile_fieldsets = (
         (_('Basic personal'), {
             'fields': [
-                ('language', 'public',),
-                ('note', 'date_joined'),
+                ('date_joined', 'public',),
             ],
             'classes': ['collapse'],
         }),
@@ -373,7 +372,7 @@ class UserProfileAdmin(ImportExportMixin, RelatedFieldAdmin, AdminAdvancedFilter
         (None, {
             'classes': ('wide',),
             'fields': ('username', 'title_before', 'first_name', 'last_name', 'title_after', 'sex',
-            'age_group', 'email', 'password'),
+            'age_group', 'email', 'password', 'language', 'note'),
         }),
     )
 
