@@ -775,7 +775,7 @@ class InteractionAdmin(RelatedFieldAdmin, admin.ModelAdmin):
     autocomplete_fields = ('user',)
 
     readonly_fields = ('type', 'created_by', 'handled_by', )
-    list_filter = ['dispatched', 'send', 'date', 'method', 'type', 'user', 'event'
+    list_filter = ['dispatched', 'send', 'date', 'method', 'type',  'event'
     ]
 
     search_fields = (
