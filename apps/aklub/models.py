@@ -704,6 +704,12 @@ class Telephone(models.Model):
         blank=True,
         default=False,
     )
+    note = models.CharField(
+        verbose_name=_("Note"),
+        help_text=_("e.g. do not call during a workweek"),
+        max_length=70,
+        blank=True,
+    )
     user = models.ForeignKey(
         UserProfile,
         blank=True,
