@@ -25,7 +25,7 @@ from django.test import RequestFactory, TestCase
 from model_mommy import mommy
 
 from .. import admin, filters
-from ..models import Campaign, Payment, UserInCampaign, UserProfile
+from ..models import Event, Payment, UserInCampaign, UserProfile, Telephone
 
 
 class FilterTestCase(TestCase):
@@ -115,19 +115,19 @@ class FixtureFilterTests(FilterTestCase):
         q = f.queryset(self.request, UserInCampaign.objects.all())
         self.assertEqual(q.count(), 4)
 
-    def test_active_camaign_filter_no(self):
+    def test_active_campaign_filter_no(self):
         f = filters.ActiveCampaignFilter(self.request, {"active": "no"}, UserProfile, None)
-        q = f.queryset(self.request, Campaign.objects.all())
+        q = f.queryset(self.request, Event.objects.all())
         self.assertEqual(q.count(), 0)
 
-    def test_active_camaign_filter_yes(self):
+    def test_active_campaign_filter_yes(self):
         f = filters.ActiveCampaignFilter(self.request, {"active": "yes"}, UserProfile, None)
-        q = f.queryset(self.request, Campaign.objects.all())
+        q = f.queryset(self.request, Event.objects.all())
         self.assertEqual(q.count(), 3)
 
-    def test_active_camaign_filter_yes_without_query(self):
+    def test_active_campaign_filter_yes_without_query(self):
         f = filters.ActiveCampaignFilter(self.request, {}, UserProfile, None)
-        q = f.queryset(self.request, Campaign.objects.all())
+        q = f.queryset(self.request, Event.objects.all())
         self.assertEqual(q.count(), 3)
 
     def test_show_payments_by_year_blank(self):
