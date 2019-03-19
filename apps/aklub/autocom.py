@@ -103,11 +103,10 @@ def process_template(template_string, user):
         city=user.city,
         zipcode=user.zip_code,
         email=user.email,
-        last_payment_amount=user.last_payment and user.last_payment.amount or None,
-        auth_token=sesame_utils.get_query_string(user.userprofile),
+        auth_token=sesame_utils.get_query_string(user),
     )
 
-    return gendrify_text(text, user.userprofile.sex)
+    return gendrify_text(text, user.sex)
 
 
 def check(users=None, action=None):

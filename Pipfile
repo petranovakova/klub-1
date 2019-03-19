@@ -28,8 +28,8 @@ django-related-admin = "*"
 django-denorm = "*"
 gunicorn = "*"
 django-betterforms = "*"
-django-adminactions = {editable = true, ref = "develop", git = "https://github.com/saxix/django-adminactions.git"}
-django-helpdesk = {editable = true, ref = "develop", git = "https://github.com/django-helpdesk/django-helpdesk.git"}
+django-adminactions = {editable = true,ref = "develop",git = "https://github.com/saxix/django-adminactions.git"}
+django-helpdesk = {editable = true,ref = "develop",git = "https://github.com/django-helpdesk/django-helpdesk.git"}
 django-admin-large-initial-data = "*"
 django-admin-tools-stats = "*"
 django-bower = "*"
@@ -71,7 +71,6 @@ django-nested-admin = "*"
 django_celery_monitor = "*"
 django_grapesjs = "*"
 
-
 [dev-packages]
 coverage = "*"
 django_coverage_plugin = "*"
@@ -85,10 +84,12 @@ pudb = "*"
 "flake8-tidy-imports" = "*"
 "flake8-builtins" = "*"
 coveralls = "*"
-django-admin-smoke-tests = {git = "https://github.com/jnoortheen/django-admin-smoke-tests", editable = true}
+django-admin-smoke-tests = {git = "https://github.com/jnoortheen/django-admin-smoke-tests",editable = true}
 model_mommy = "*"
 mock = "*"
+v = {editable = true,version = "*"}
 
 [requires]
 python_version = "3.6"
+
 [dev-dependencies]

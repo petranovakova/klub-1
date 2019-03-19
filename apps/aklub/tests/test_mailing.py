@@ -75,7 +75,7 @@ class MailingTest(TestCase):
             subject_en="Testing email",
             method="email",
         )
-        u = models.UserInCampaign.objects.get(userprofile__email='test.user1@email.cz')
+        u = models.UserProfile.objects.get(userprofile__email='test.user1@email.cz')
         with self.assertRaises(Exception) as ex:
             mailing.send_communication_sync(c.id, 'automatic', u.id, sending_user.id)
         self.assertEqual(str(ex.exception), "Message template is empty for one of the language variants.")

@@ -134,7 +134,7 @@ class RegularPaymentsFilter(SimpleListFilter):
 
 class TelephoneFilter(SimpleListFilter):
     title = _("Telephone")
-    parameter_name = 'telephone'
+    parameter_name = 'pk'
 
     def lookups(self, request, model_admin):
         return (

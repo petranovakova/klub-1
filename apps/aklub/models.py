@@ -2310,7 +2310,7 @@ class AutomaticCommunication(models.Model):
         default=False,
     )
     sent_to_users = models.ManyToManyField(
-        UserInCampaign,
+        UserProfile,
         help_text=_(
             "List of users to whom this communication was already sent"),
         blank=True,
@@ -2396,7 +2396,7 @@ class MassCommunication(models.Model):
         default=False,
     )
     send_to_users = models.ManyToManyField(
-        UserInCampaign,
+        UserProfile,
         verbose_name=_("send to users"),
         help_text=_(
             "All users who should receive the communication"),

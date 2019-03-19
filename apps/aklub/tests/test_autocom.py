@@ -41,8 +41,8 @@ class AutocomTest(TestCase):
         )
         AutomaticCommunication.objects.create(
             condition=c,
-            template="Vazen{y|a} {pane|pani} $addressment $regular_frequency testovací šablona",
-            template_en="Dear {sir|miss} $addressment $regular_frequency test template",
+            template="Vazen{y|a} {pane|pani} $addressment testovací šablona",
+            template_en="Dear {sir|miss} $addressment test template",
             subject="Testovací komunikace",
             subject_en="Testing communication",
         )
