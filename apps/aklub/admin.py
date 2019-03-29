@@ -107,6 +107,7 @@ class DonorPaymentChannelInline(nested_admin.NestedStackedInline):
                 ('other_support'),
                 ('event'),
             ],
+            'classes': ['collapse'],
         }),
 
     filter_horizontal = ('event', )
@@ -439,6 +440,7 @@ class UserProfileAdmin(ImportExportMixin, RelatedFieldAdmin, AdminAdvancedFilter
     readonly_fields = ('userattendance_links', 'date_joined', 'last_login',)
     actions = (send_mass_communication_distinct_action,)
     inlines = [TelephoneInline, DonorPaymentChannelInline, InteractionInline]
+    superuser_fieldsets = 'password', 'is_staff', 'is_superuser', 'groups', 'user_permissions'
     change_form_template = 'admin/aklub/userprofile_changeform.html'
     add_form_template = 'admin/aklub/userprofile_changeform.html'
 
@@ -448,6 +450,7 @@ class UserProfileAdmin(ImportExportMixin, RelatedFieldAdmin, AdminAdvancedFilter
                 'css/admin.css',
             )
         }
+
 
 class UserInCampaignResource(ModelResource):
     userprofile_email = fields.Field(
